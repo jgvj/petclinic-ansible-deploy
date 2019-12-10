@@ -1,0 +1,28 @@
+---
+# tasks file for poc-deploy
+#- name: Setup Environment
+#  include_tasks: traditional_setup.yml
+
+- name: remove project directory if exists
+  file:
+    path: "{{ remote_project_dir }}"
+    state: absent
+
+- name: create project directory
+  file:
+    path: "{{ remote_project_dir }}"
+    state: directory
+
+- name: copy docker shell script to remote server
+  copy:
+    src: docker.sh
+    dest: "{{ remote_project_dir }}/"
+    mode: 0777
+
+- name: copy war source file to tomcat
+  copy:
+    src: "{{ source_war_path }}"
+    dest: "{{ remote_project_dir }}/"
+
+- name: run docker to deploy webapp
+  shell: "{{ remote_project_dir }}/docker.sh"

@@ -1,0 +1,12 @@
+---
+# defaults file for poc-deploy
+tomcat_tar_url: http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0.29.tar.gz
+
+#root_dir: /Users/sqemacbook1
+root_dir: /home/ubuntu
+
+tomcat_dir: "{{ root_dir }}/Library/tomcat"
+
+source_war_path: "~/sample.war"
+
+remote_project_dir: "{{ root_dir }}/pipeline"
