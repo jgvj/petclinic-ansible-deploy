@@ -2,4 +2,4 @@
 - hosts: testvm1
   remote_user: ubuntu
   roles:
-    - poc-deploy
+    - petclinic-deploy
