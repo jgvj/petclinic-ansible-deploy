@@ -24,5 +24,13 @@
     src: "{{ source_war_path }}"
     dest: "{{ remote_project_dir }}/"
 
+- name: copy jacoco required files to remote server
+  copy:
+    src: "{{ item }}"
+    dest: "{{ remote_project_dir }}/"
+  with_fileglob:
+    - catalina.sh
+    - org.jacoco.agent-0.7.9-runtime.jar
+
 - name: run docker to deploy webapp
   shell: "{{ remote_project_dir }}/docker.sh"
