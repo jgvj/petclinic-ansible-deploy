@@ -648,4 +648,3 @@ else
   echo "Note: Waiting for the process to end and use of the -force option require that \$CATALINA_PID is defined"
   exit 1
 
-fi
