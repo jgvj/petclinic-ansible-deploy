@@ -1,6 +1,5 @@
 ---
-# defaults file for poc-deploy
-tomcat_tar_url: http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0.29.tar.gz
+# defaults file for petclinic-deploy
 
 #root_dir: /Users/liujie
 root_dir: /home/ubuntu
