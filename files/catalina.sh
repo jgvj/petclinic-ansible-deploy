@@ -253,7 +253,7 @@ JAVA_OPTS="$JAVA_OPTS $JSSE_OPTS"
 
 # Register custom URL handlers
 # Do this here so custom URL handles (specifically 'war:...') can be used in the security policy
-JAVA_OPTS="$JAVA_OPTS -Djava.protocol.handler.pkgs=org.apache.catalina.webresources  -javaagent:$CATALINA_BASE/lib/org.jacoco.agent-0.7.9-runtime.jar=output=tcpserver,address=*,port=6300"
+JAVA_OPTS="$JAVA_OPTS -Djava.protocol.handler.pkgs=org.apache.catalina.webresources  -javaagent:$CATALINA_BASE/lib/org.jacoco.agent-0.7.9-runtime.jar=output=tcpserver,address=172.17.0.2,port=6300"
 
 # Set juli LogManager config file if it is present and an override has not been issued
 if [ -z "$LOGGING_CONFIG" ]; then
@@ -648,4 +648,3 @@ else
   echo "Note: Waiting for the process to end and use of the -force option require that \$CATALINA_PID is defined"
   exit 1
 
-fi
