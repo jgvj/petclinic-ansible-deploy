@@ -11,7 +11,7 @@ if docker ps -a | grep -i tomcat ; then
 docker rm -f tomcat
 fi
 
-docker run --name tomcat -v ~/pipeline/petclinic.war:/usr/local/tomcat/webapps/petclinic.war -dit -p 8081:8080 tomcat
+docker run --name tomcat -v ~/pipeline/petclinic.war:/usr/local/tomcat/webapps/petclinic.war -dit -p 8081:8080 -p 31000:6300 tomcat
 
 #####################################################################################
 # Jacoco related configuration in tomcat container
